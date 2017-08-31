@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Today's Halton FD Calls</title>
+  </head>
+  <body>
+    <h1>Today's Burlington FD Calls</h1>
+	<?php 
+	$command = 'ls';
+	exec($command, $out, $status);
+	
+	$command = escapeshellcmd('/var/www/html/today.py');
+	$output = shell_exec($command);
+	echo $output;
+
+	?>
+
+  </body>
+</html>
